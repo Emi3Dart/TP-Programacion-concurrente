@@ -1,0 +1,81 @@
+# depslib dependency file v1.0
+1780322585 source:f:\my things\estudios\universidad\materias activas\programacion concurrente\codigo\tp concurrente\main.cpp
+	"pcv.h"
+	"semaforo.h"
+	<iostream>
+	<thread>
+	<queue>
+	<vector>
+
+1780325354 f:\my things\estudios\universidad\materias activas\programacion concurrente\codigo\tp concurrente\pcv.h
+	<string>
+	<chrono>
+
+1780125428 f:\my things\estudios\universidad\materias activas\programacion concurrente\codigo\tp concurrente\semaforo.h
+	<mutex>
+	<condition_variable>
+
+1780325332 source:f:\my things\estudios\universidad\materias activas\programacion concurrente\codigo\tp concurrente\pcv.cpp
+	"pcv.h"
+	"aging.h"
+	"semaforo.h"
+	<iostream>
+	<queue>
+	<mutex>
+	<thread>
+	<chrono>
+	<ctime>
+	<fstream>
+
+1780125715 source:f:\my things\estudios\universidad\materias activas\programacion concurrente\codigo\tp concurrente\semaforo.cpp
+	"semaforo.h"
+	<mutex>
+	<condition_variable>
+
+1780269911 f:\my things\estudios\universidad\materias activas\programacion concurrente\codigo\tp concurrente\aging.h
+	"pcv.h"
+
+1780323489 source:f:\my things\estudios\universidad\materias activas\programacion concurrente\codigo\tp concurrente\aging.cpp
+	"aging.h"
+	<chrono>
+
+1780323489 source:c:\users\alejo\onedrive\escritorio\tp concurrente\aging.cpp
+	"aging.h"
+	<chrono>
+
+1780269911 c:\users\alejo\onedrive\escritorio\tp concurrente\aging.h
+	"pcv.h"
+
+1780325354 c:\users\alejo\onedrive\escritorio\tp concurrente\pcv.h
+	<string>
+	<chrono>
+
+1780322585 source:c:\users\alejo\onedrive\escritorio\tp concurrente\main.cpp
+	"pcv.h"
+	"semaforo.h"
+	<iostream>
+	<thread>
+	<queue>
+	<vector>
+
+1780125428 c:\users\alejo\onedrive\escritorio\tp concurrente\semaforo.h
+	<mutex>
+	<condition_variable>
+
+1780325332 source:c:\users\alejo\onedrive\escritorio\tp concurrente\pcv.cpp
+	"pcv.h"
+	"aging.h"
+	"semaforo.h"
+	<iostream>
+	<queue>
+	<mutex>
+	<thread>
+	<chrono>
+	<ctime>
+	<fstream>
+
+1780125715 source:c:\users\alejo\onedrive\escritorio\tp concurrente\semaforo.cpp
+	"semaforo.h"
+	<mutex>
+	<condition_variable>
+
