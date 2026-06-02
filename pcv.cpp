@@ -37,6 +37,10 @@ void logEvento(const Job& tarea, const std::string& evento){
 
     std::cout << "[" << hora << "] - " << "Job " << tarea.id << " - Prioridad " << tarea.prioridad << " - " << evento << std::endl;
     archivoLog << "[" << hora << "] - " << "Job " << tarea.id << " - Prioridad " << tarea.prioridad << " - " << evento << std::endl;
+    if (archivoLog.is_open()) {
+        archivoLog << "[" << hora << "] - " << "Job " << tarea.id << " - Prioridad " << tarea.prioridad << " - " << evento << "\n";
+        archivoLog.flush(); // Asegura el volcado inmediato al disco
+    }
 }
 
 
@@ -86,15 +90,15 @@ void workerNode() {
 
         // Encolacion segun prioridad
         if(!freeQueue.empty() && agingActivado(freeQueue.front())) {
-            // Si la cola de FREE no está vacía
-            // Y además el primer job de esa cola ya superó el tiempo de espera (aging >= 5000ms)
+            // Si la cola de FREE no estÃ¡ vacÃ­a
+            // Y ademÃ¡s el primer job de esa cola ya superÃ³ el tiempo de espera (aging >= 5000ms)
             logEvento(freeQueue.front(), "AGING ACTIVADO");
 
             tarea = freeQueue.front(); // Se copia ese job a la variable local "tarea"
             freeQueue.pop(); // Se elimina de la cola porque ya va a ser procesado
 
         } else if (!premiumQueue.empty()) {
-            // Si no se cumplió el caso de aging en FREE
+            // Si no se cumpliÃ³ el caso de aging en FREE
             // pero hay jobs en la cola PREMIUM
             tarea = premiumQueue.front(); // Se toma el primer job premium (alta prioridad)
             premiumQueue.pop();
@@ -114,7 +118,7 @@ void workerNode() {
         std::unique_lock<std::mutex> lock(mtx_asignacionVRAM);
         wait(vram);
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(450)); // Retardo de asignación a VRAM.
+        std::this_thread::sleep_for(std::chrono::milliseconds(450)); // Retardo de asignaciÃ³n a VRAM.
         logEvento(tarea, "VRAM_ASIGNADO");
         }
 
