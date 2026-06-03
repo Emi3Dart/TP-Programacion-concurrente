@@ -25,6 +25,12 @@ std::ofstream archivoLog("sistema.log");
 int tareasFinalizadas = 0;
 int jobId = 0;
 
+//generador atomico de IDs (para garantizar IDs unicos secuenciales sin Race Conditions)
+int generarSiguienteId() {
+    std::unique_lock<std::mutex> lock(mtx_jobId);
+    return jobId++;
+}
+
 // Log
 void logEvento(const Job& tarea, const std::string& evento){
     std::unique_lock<std::mutex> lock(mtx_log);
