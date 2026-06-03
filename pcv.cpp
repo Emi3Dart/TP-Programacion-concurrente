@@ -117,14 +117,14 @@ void workerNode() {
         mtx_buffer.unlock();
         signal(hay_espacio); // Avisa que libera un espacio
 
-        // Mutex local (con llaves) para asignacion de Vram (Evitar asignaciones al mismo tiempo).
-        {
-        std::unique_lock<std::mutex> lock(mtx_asignacionVRAM);
-        wait(vram);
+        // El semáforo "vram" gestiona internamente la concurrencia.
+        // Esto permite que hasta 5 workers asignen memoria SIMULTÁNEAMENTE sin pisarse.
+
+        wait(vram); // Pide 1 de los 5 slots. Si están los 5 ocupados, espera.
 
         std::this_thread::sleep_for(std::chrono::milliseconds(450)); // Retardo de asignación a VRAM.
         logEvento(tarea, "VRAM_ASIGNADO");
-        }
+
 
         std::this_thread::sleep_for(std::chrono::milliseconds(600)); // Retardo durante renderizado.
         logEvento(tarea, "FINALIZADO");
