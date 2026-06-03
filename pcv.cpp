@@ -58,10 +58,8 @@ void apiGateway() {
         // Creacion estructura job
         Job tarea;
 
-        // Mutex protege acceso a los jobId evitando race condition
-        mtx_jobId.lock();
-        tarea.id = jobId++;
-        mtx_jobId.unlock();
+        // Encapsulamiento del Mutex que protege acceso a los jobId evitando race condition.
+        tarea.id = generarSiguienteId();
 
         tarea.prioridad = rand() %2; // Generacion de prioridad
         // (PRUEBA SATURACION DE RECURSOS) tarea.prioridad = 1 (Todos premium)
