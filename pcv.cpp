@@ -39,10 +39,10 @@ void logEvento(const Job& tarea, const std::string& evento){
     std::tm* tiempo = std::localtime(&ahora);
 
     char hora[20];
-    std::strftime(hora, sizeof(hora), "%H:%M:%S", tiempo);
+    std::strftime(hora, sizeof(hora), "%H:%M:%S", tiempo); // Formato de tiempo
 
-    std::cout << "[" << hora << "] - " << "Job " << tarea.id << " - Prioridad " << tarea.prioridad << " - " << evento << std::endl;
-    archivoLog << "[" << hora << "] - " << "Job " << tarea.id << " - Prioridad " << tarea.prioridad << " - " << evento << std::endl;
+    std::cout << "[" << hora << "] - " << "Job " << tarea.id << " - Prioridad " << tarea.prioridad << " - " << evento << std::endl; // Registro de actividad
+    
     if (archivoLog.is_open()) {
         archivoLog << "[" << hora << "] - " << "Job " << tarea.id << " - Prioridad " << tarea.prioridad << " - " << evento << "\n";
         archivoLog.flush(); // Asegura el volcado inmediato al disco
