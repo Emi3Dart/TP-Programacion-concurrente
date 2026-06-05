@@ -1,0 +1,69 @@
+# depslib dependency file v1.0
+1780619061 source:c:\users\alejo\onedrive\escritorio\cloud_computing\logger.cpp
+	"Logger.h"
+	<iostream>
+	<chrono>
+	<iomanip>
+
+1780619061 c:\users\alejo\onedrive\escritorio\cloud_computing\logger.h
+	<string>
+	<mutex>
+	<fstream>
+
+1780619061 source:c:\users\alejo\onedrive\escritorio\cloud_computing\main.cpp
+	<iostream>
+	<thread>
+	<vector>
+	"Job.h"
+	"MessageQueue.h"
+	"VramPool.h"
+	"Logger.h"
+	"Workers.h"
+
+1780619061 c:\users\alejo\onedrive\escritorio\cloud_computing\job.h
+	<chrono>
+
+1780619061 c:\users\alejo\onedrive\escritorio\cloud_computing\messagequeue.h
+	"Job.h"
+	<vector>
+	<mutex>
+	<condition_variable>
+
+1780619061 c:\users\alejo\onedrive\escritorio\cloud_computing\vrampool.h
+	"Job.h"
+	"Semaforo.h"
+	<vector>
+	<mutex>
+
+1780619061 c:\users\alejo\onedrive\escritorio\cloud_computing\semaforo.h
+	<mutex>
+	<condition_variable>
+
+1780619061 c:\users\alejo\onedrive\escritorio\cloud_computing\workers.h
+
+1780619061 source:c:\users\alejo\onedrive\escritorio\cloud_computing\messagequeue.cpp
+	"MessageQueue.h"
+	"Logger.h"
+	<chrono>
+
+1780619061 source:c:\users\alejo\onedrive\escritorio\cloud_computing\semaforo.cpp
+	"Semaforo.h"
+	<mutex>
+	<condition_variable>
+
+1780619061 source:c:\users\alejo\onedrive\escritorio\cloud_computing\vrampool.cpp
+	"VramPool.h"
+	"Logger.h"
+	<thread>
+	<chrono>
+
+1780619061 source:c:\users\alejo\onedrive\escritorio\cloud_computing\workers.cpp
+	"Workers.h"
+	"Job.h"
+	"MessageQueue.h"
+	"VramPool.h"
+	"Logger.h"
+	<random>
+	<thread>
+	<chrono>
+
