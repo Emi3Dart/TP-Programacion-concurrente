@@ -33,6 +33,14 @@ Job MessageQueue::pop() {
     // Requisito TP: Garantizar que Jobs "Free" no mueran por Premium
     // ==========================================
     for (size_t i = 0; i < cola.size(); ++i) {
+        
+        // Si encontramos una Poison Pill (ID = -1), la seleccionamos inmediatamente.
+        // No debe participar en la lógica de prioridades ni en el mecanismo de Aging,
+        if (cola[i].id == -1) {
+            index_a_procesar = i;
+        break;
+    }
+        
         if (cola[i].prioridad == 1) {
             // Si encontramos un Premium (1), lo seleccionamos porque la regla es despacharlos primariamente
             index_a_procesar = i;
